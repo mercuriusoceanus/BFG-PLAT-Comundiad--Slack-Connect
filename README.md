@@ -1,1 +1,1 @@
-# bfg-slack-connect
+# bfg Slack Connect
