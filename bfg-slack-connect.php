@@ -19,6 +19,7 @@ function bfg_show_button_slack($urlSrc, $text){
   echo '<a class="push-right button outline small" href="'.$urlSrc.'" id="connect-to-slack">'.$text.'</a>';
 }
 // define the bp_member_header_actions callback 
+// CAmbio de nombre
 function bfg_add_slack_button() { 
 
   $clientID = get_option( 'client_id_option' );
