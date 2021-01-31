@@ -12,7 +12,7 @@ const slackConnect = () => {
       window.location.href = '/';
       return;
     }
-    if (code) {
+    if (code !== null) {
       getAccessToken(code, bpRestApi.idSlack, bpRestApi.secretSlack).then((data) => {
         const {team_id, user_id, team_name} = data;
         setUserSlackInProfile(user_id, team_id, team_name).then((setUserData) => {
