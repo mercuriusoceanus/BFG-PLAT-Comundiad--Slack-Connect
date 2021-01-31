@@ -5,7 +5,7 @@ async function getAccessToken(code, idSlack, secretSlack ) {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: `code=${code}&client_id=1202804016946.1695908297266&client_secret=78db4d92c56ad88e92a4b1828a89c74f`,
+      body: `code=${code}&client_id=${idSlack}&client_secret=${secretSlack}`,
     });
     const data = await resp.json();
     return data;
