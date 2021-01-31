@@ -24,7 +24,7 @@ function bfg_add_slack_button() {
   $clientID = get_option( 'client_id_option' );
   $profileUserID = bp_displayed_user_id();
   $current_user = wp_get_current_user();
-  $slackUnfo = xprofile_get_field_data('50', $profileUserID);
+  $slackUnfo = xprofile_get_field_data('4', $profileUserID);
   $dataUSer = explode(' - ', $slackUnfo);
 	if(is_user_logged_in()){
     if($current_user->ID === $profileUserID){ 
