@@ -13,30 +13,27 @@ function bfg_slack_credentials(){
 //register settings
 function bfg_register_slack_plugin_settings() {
     register_setting( 'bfg-slack-plugin-settings-group', 'client_id_option' );
-    // register_setting( 'bfg-slack-plugin-settings-group', 'secret_id_option' );
+    register_setting( 'bfg-slack-plugin-settings-group', 'client_secret_option' );
 }
 
 function bfg_slack_admin_options(){
   ?>
-      <h1>Agregar credenciales</h1>
-      <form method="post" action="options.php">
-          <?php settings_fields( 'bfg-slack-plugin-settings-group' ); ?>
-          <?php do_settings_sections( 'bfg-slack-plugin-settings-group' ); ?>
-          <table class="form-table">
-            <tr valign="top">
-            <th scope="row">Client ID</th>
-            <td><input type="text" name="client_id_option" value="<?php echo get_option( 'client_id_option' ); ?>"/></td>
-            </tr>
-            <th scope="row">Nombre del Espacio de</th>
-            <td><input type="text" name="client_id_option" value="<?php echo get_option( 'client_id_option' ); ?>"/></td>
-            </tr>
-            <!-- <tr valign="top">
-            <th scope="row">Secret ID</th>
-            <td><input type="text" name="secret_id_option" value="<?php echo get_option( 'secret_id_option' ); ?>"/></td>
-            </tr> -->
-          </table>
-      <?php submit_button(); ?>
-      </form>
-  
-  <?php 
+<h1>Agregar credenciales para la conexión con el espacio de trabajo de Slack</h1>
+<form method="post" action="options.php">
+  <?php settings_fields( 'bfg-slack-plugin-settings-group' ); ?>
+  <?php do_settings_sections( 'bfg-slack-plugin-settings-group' ); ?>
+  <table class="form-table">
+    <tr valign="top">
+      <th scope="row">Client ID</th>
+      <td><input type="text" name="client_id_option" value="<?php echo get_option( 'client_id_option' ); ?>" /></td>
+    </tr>
+    <tr valign="top">
+      <th scope="row">Client Secret</th>
+      <td><input type="text" name="client_secret_option" value="<?php echo get_option( 'client_secret_option' ); ?>" />
+      </td>
+    </tr>
+  </table>
+  <?php submit_button(); ?>
+</form>
+<?php 
 }

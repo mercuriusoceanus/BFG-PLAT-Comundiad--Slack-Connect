@@ -1,4 +1,4 @@
-async function getAccessToken(code) {
+async function getAccessToken(code, idSlack, secretSlack ) {
   try {
     const resp = await fetch('https://slack.com/api/oauth.access', {
       method: 'POST',

@@ -1,5 +1,4 @@
 import getAccessToken from '../services/getAccessToken';
-import getUserUdentity from '../services/getUserIdentity';
 
 const slackConnect = () => {
   const { bpRestApi } = window;
@@ -13,9 +12,8 @@ const slackConnect = () => {
       window.location.href = '/';
       return;
     }
-    if (code != null) {
-      getAccessToken(code).then((data) => {
-        const token = data.access_token;
+    if (code !== null) {
+      getAccessToken(code, bpRestApi.idSlack, bpRestApi.secretSlack).then((data) => {
         const {team_id, user_id, team_name} = data;
         setUserSlackInProfile(user_id, team_id, team_name).then((setUserData) => {
           getUserInfo(Number(bpRestApi.sessionUserID)).then((userData) => {
@@ -25,16 +23,6 @@ const slackConnect = () => {
             console.log(error);
           });
         });
-        // getUserUdentity(token).then((identity) => {
-        //   getUserInfo(bpRestApi.sessionUserID).then((userData) => {
-        //     const { link } = userData;
-        //     window.location.href = link;
-        //   }).then((error) => {
-        //     console.log(error);
-        //   });
-        // }).then((error) => {
-        //   console.log(error);
-        // });
       }).then((error) => {
         console.log(error);
       });

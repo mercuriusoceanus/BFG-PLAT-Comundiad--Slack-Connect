@@ -2,7 +2,7 @@
 /*
 Plugin Name: BFG Slack Connect
 Description: Plugin que se conecta a los servicios de Slack
-Version:     1.0
+Version:     1.2
 Author:      Beforget
 Author URI:   https://beforget.com/
 License:     GPL2
@@ -41,5 +41,5 @@ function bfg_add_slack_button() {
 	}
 }; 
 // add the action 
-add_action( 'bp_member_header_actions', 'bfg_add_slack_button', 10, 0 ); 
+add_action( 'bp_member_header_actions', 'bfg_add_slack_button', 10, 0 );
 
