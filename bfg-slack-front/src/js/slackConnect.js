@@ -53,7 +53,7 @@ const slackConnect = () => {
   const setUserSlackInProfile = async (userId, teamId, team_name) => {
     try {
       const response = await fetch(
-        `https://${window.location.host}/wp-json/buddyboss/v1/xprofile/50/data/4`,
+        `https://${window.location.host}/wp-json/buddyboss/v1/xprofile/4/data/1`,
         // `http://${window.location.host}/wp-json/buddyboss/v1/xprofile/4/data/1`,
         {
           method: 'PATCH',
@@ -63,7 +63,7 @@ const slackConnect = () => {
           },
           body: JSON.stringify({
             user_id: Number(bpRestApi.sessionUserID),
-            field_id: 50,
+            field_id: 4,
             // field_id: 4,
             value: [userId, '-', teamId],
           }),

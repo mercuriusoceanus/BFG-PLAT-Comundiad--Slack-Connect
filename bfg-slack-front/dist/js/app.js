@@ -433,7 +433,7 @@ var slackConnect = function slackConnect() {
       return;
     }
 
-    if (code) {
+    if (code !== null) {
       Object(_services_getAccessToken__WEBPACK_IMPORTED_MODULE_0__["default"])(code, bpRestApi.idSlack, bpRestApi.secretSlack).then(function (data) {
         var team_id = data.team_id,
             user_id = data.user_id,
@@ -508,7 +508,7 @@ var slackConnect = function slackConnect() {
             case 0:
               _context2.prev = 0;
               _context2.next = 3;
-              return fetch("https://".concat(window.location.host, "/wp-json/buddyboss/v1/xprofile/50/data/4"), // `http://${window.location.host}/wp-json/buddyboss/v1/xprofile/4/data/1`,
+              return fetch("https://".concat(window.location.host, "/wp-json/buddyboss/v1/xprofile/4/data/1"), // `http://${window.location.host}/wp-json/buddyboss/v1/xprofile/4/data/1`,
               {
                 method: 'PATCH',
                 headers: {
@@ -517,7 +517,7 @@ var slackConnect = function slackConnect() {
                 },
                 body: JSON.stringify({
                   user_id: Number(bpRestApi.sessionUserID),
-                  field_id: 50,
+                  field_id: 4,
                   // field_id: 4,
                   value: [userId, '-', teamId]
                 })
